@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class ThirdPersonLook : MonoBehaviour {
 
-    public float rotateSpeed = 2.0f;
+    public float speedH = 2.0f;
+    public float speedV = 2.0f;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        float horizontal = Input.GetAxis("Mouse X") * rotateSpeed;
-        float vertical = Input.GetAxis("Mouse Y") * rotateSpeed;
-        transform.RotateAround(transform.position, Vector3.up, horizontal);
-        transform.RotateAround(transform.position, Vector3.left, vertical);
+    private float yaw = 0.0f;
+    private float pitch = 0.0f;
+
+    void Update()
+    {
+        yaw += speedH * Input.GetAxis("Mouse X");
+        pitch -= speedV * Input.GetAxis("Mouse Y");
+
+        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
     }
 }
