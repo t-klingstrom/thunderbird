@@ -235,7 +235,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Scripts\Controller2D.cs" />
+    <Compile Include="Assets\_Scripts\PlatformController.cs" />
     <Compile Include="Assets\_Scripts\Player.cs" />
+    <Compile Include="Assets\_Scripts\RaycastController.cs" />
     <Compile Include="Assets\ThirdPersonLook.cs" />
   </ItemGroup>
   <ItemGroup>
